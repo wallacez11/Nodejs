@@ -1,1 +1,6 @@
 20231122	18:02:55	e9e487c4-33f8-452f-91b0-d7c5f1854f3b	 Not allowed by cors
+20231122	19:26:46	c8c9f196-9652-48a1-856c-a1137114a1f1	 req.json is not a function
+20231122	19:27:15	be29c9fe-8d7f-463b-80a5-5819dbba0694	 req.json is not a function
+20231122	19:27:32	0182f1f0-f17a-4e2c-af79-65e0a4790ee1	 req.json is not a function
+20231122	19:30:14	83643ec8-9a5d-430a-a4b8-f03f32ec420a	 Cannot read properties of undefined (reading 'id')
+20231122	19:31:55	b791d420-20bf-4692-bccb-f2bc2f845122	 r is not defined
