@@ -1,0 +1,9 @@
+20231113	15:51:54	e0906bff-d314-4d7b-8141-e1336f45c5a9	/new-page	GET
+20231113	15:51:55	de4d1314-20f3-43c8-8e54-ee59f34eadd0	/css/style.css	GET
+20231113	15:51:55	1aaedaeb-f8d4-4eed-a220-f89902bcb47e	/img/img1.jpg	GET
+20231113	15:54:49	d4ed3eed-8cb4-4c8c-82dc-59fc9b4f4efb	/new-page	GET
+20231113	15:56:01	66cd3dbb-009a-4622-aa01-aae3a42cf4df	/index	GET
+20231113	15:56:07	8b955be1-04a9-4137-9d1e-0fea95e56606	/index.html	GET
+20231113	15:56:11	f83619b8-621d-4cbf-8f6e-97feffe4efac	/	GET
+20231113	15:56:23	bc66aa35-f301-4d23-8c8d-12d438e4298a	/	GET
+20231113	15:56:23	edbc5c20-c825-481b-a42e-ea6b3f66db4a	/css/style.css	GET
