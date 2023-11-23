@@ -18,6 +18,8 @@ const handleAuth = async(req, res) => {
 
         if(match){
             res.json({'sucess': `User ${user} is logged in !`})
+        }else{
+            res.status(401).json({'failure': `user or password incorrect`})
         }
     }catch(err){
         res.status(500).json({'message': err.message})
