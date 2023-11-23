@@ -3,7 +3,7 @@ const router = express.Router();
 const data = {}
 const employeesController = require('../../controllers/employeesController')
 
-data.employees = require('../../data/employees.json')
+data.employees = require('../../model/employees.json')
 
 router.route('/')
 .get(employeesController.getAllEmployees)

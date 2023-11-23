@@ -18,7 +18,7 @@ const createNewEmployee = (req, res) => {
         return res.status(400).json({'message': 'First and last names are required'})
     }
 
-    data.setEmployees([...data.employees, employees])
+    data.setEmployees([...data.employees, newEmployee])
     res.status(201).json(data.employees)
 }
 
@@ -40,7 +40,7 @@ const updateEmployee = (req, res) =>{
 const deleteEmployee = (req, res) => {
     const employee = data.employees.find(emp => emp.id === parseInt(req.body.id))
     if(!employee){
-        return res.status(400).json({ "message'" : `Employee id ${rea.body.id} not found`})
+        return res.status(400).json({ "message'" : `Employee id ${req.body.id} not found`})
     }
     const filteredArray = data.employees.filter(emp => emp.id !== parseInt(req.body.id))
     data.setEmployees([...filteredArray])
@@ -50,7 +50,7 @@ const deleteEmployee = (req, res) => {
 const getEmployee = (req, res) =>{
     const employee = data.employees.find(emp => emp.id === parseInt(req.params.id))
     if(!employee){
-        return res.status(400).json({ "message'" : `Employee id ${rea.params.id} not found`})
+        return res.status(400).json({ "message'" : `Employee id ${req.params.id} not found`})
     }
     res.json(employee)
 }

@@ -4,3 +4,6 @@
 20231122	19:27:32	0182f1f0-f17a-4e2c-af79-65e0a4790ee1	 req.json is not a function
 20231122	19:30:14	83643ec8-9a5d-430a-a4b8-f03f32ec420a	 Cannot read properties of undefined (reading 'id')
 20231122	19:31:55	b791d420-20bf-4692-bccb-f2bc2f845122	 r is not defined
+20231123	16:12:37	cc838f02-329a-4803-a4bf-0a60e069ec28	 employees is not defined
+20231123	16:14:07	52458c6c-50c0-47c2-a728-f0da903b5398	 rea is not defined
+20231123	16:16:09	b1b4367b-1aea-4017-9f21-1dbfb78f19f5	 rea is not defined
