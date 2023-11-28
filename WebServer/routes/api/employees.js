@@ -6,7 +6,7 @@ const verifyJWT = require('../../middleware/verifyJWT')
 data.employees = require('../../model/employees.json')
 
 router.route('/')
-.get(verifyJWT, employeesController.getAllEmployees)
+.get( employeesController.getAllEmployees)
 .post(employeesController.createNewEmployee)
 .put(employeesController.updateEmployee)
 .delete(employeesController.deleteEmployee)

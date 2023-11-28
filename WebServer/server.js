@@ -5,6 +5,8 @@ const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const { logger} = require('./middleware/logEvents')
 const  errorHandler = require('./middleware/errorHandler')
+const verifyJwt = require('./middleware/verifyJWT')
+const cookieparser = require('cookie-parser')
 
 const PORT = process.env.PORT || 3500;
 
@@ -23,15 +25,18 @@ app.use(express.urlencoded({extended: false}))
 //built in middleware for json
 app.use(express.json())
 
+app.use(cookieparser())
+
 app.use(express.static(path.join(__dirname , '/public')))
 
 //routes
 app.use('/',require('./routes/roots'))
 app.use('/register',require('./routes/register'))
-app.use('/employees',require('./routes/api/employees'))
 app.use('/auth', require('./routes/auth'))
-
-
+app.use('/refresh', require('./routes/refresh'))
+app.use('/logout', require('./routes/logout'))
+app.use(verifyJwt)
+app.use('/employees',require('./routes/api/employees'))
 
 
 app.all('*', (req, res) =>{
