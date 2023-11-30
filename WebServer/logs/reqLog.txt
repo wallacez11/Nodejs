@@ -261,3 +261,4 @@
 20231129	21:51:25	ce9ce6f8-edcb-4464-ae13-c4fc245f2281	DELETE	undefined	/employees
 20231129	21:51:28	c7ceda08-38d3-427b-b152-723edff70f09	POST	undefined	/auth
 20231129	21:51:43	9d25ab7c-7fbe-4945-a46f-dc1703be5267	DELETE	undefined	/employees
+20231130	18:39:15	8d2588b6-c445-4ed3-b1df-ed9ec1e97aa6	POST	undefined	/register
