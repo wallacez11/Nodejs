@@ -7,6 +7,7 @@ const { logger} = require('./middleware/logEvents')
 const  errorHandler = require('./middleware/errorHandler')
 const verifyJwt = require('./middleware/verifyJWT')
 const cookieparser = require('cookie-parser')
+const credentials = require('./middleware/credentials')
 
 const PORT = process.env.PORT || 3500;
 
@@ -16,6 +17,8 @@ const PORT = process.env.PORT || 3500;
 app.use(logger)
 
 //Cross Origin resource sharing
+
+app.use(credentials)
 
 app.use(cors(corsOptions))
 

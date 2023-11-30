@@ -14,4 +14,4 @@ const corsOptions = {
     optionSucccessStatus: 200
 }
 
-module.exports = corsOptions
+module.exports = {corsOptions, whitelist}
