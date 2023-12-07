@@ -1,6 +1,5 @@
 const User = require('./../model/User')
 const bcrypt = require('bcrypt')
-const roles = require('../config/roles_list')
 
 const handlerNewUser = async(req, res) =>{
     const{user, pwd} = req.body

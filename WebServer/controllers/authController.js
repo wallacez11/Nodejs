@@ -5,16 +5,17 @@ const userDb = {
 
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const fsPromises = require('fs').promises
 const path = require('path')
-const roles = require('../config/roles_list')
+const User = require('./../model/User')
+
+
 
 
 const handleAuth = async (req, res) => {
     const { user, pwd } = req.body
     if (!user || !pwd) return res.status(400).json({ 'message': 'Username and password are required' })
     // check for duplicate username in the db
-    const foundUser = userDb.users.find(person => person.username === user)
+    const foundUser = await User.findOne({username: user}).exec()
     if (!foundUser) return res.sendStatus(401)
 
     try {
@@ -31,7 +32,7 @@ const handleAuth = async (req, res) => {
                     }
                 },
                 process.env.ACESS_TOKEN_SECRET,
-                { expiresIn: '30s' }
+                { expiresIn: '1d' }
             )
             const refreshToken = jwt.sign(
                 { "username": foundUser.username },
@@ -39,14 +40,10 @@ const handleAuth = async (req, res) => {
                 { expiresIn: '1d' }
             )
 
-            const otherUsers = userDb.users.filter(person => person.username !== foundUser.username)
-            const currentUser = { ...foundUser, refreshToken }
-            userDb.setUsers([...otherUsers, currentUser])
+            foundUser.refreshToken = refreshToken
+            const result = await foundUser.save()
+            console.log(result)
 
-            await fsPromises.writeFile(
-                path.join(__dirname, '..', 'model', 'users.json'),
-                JSON.stringify(userDb.users)
-            )
             res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
             res.json({ acessToken })
         } else {
